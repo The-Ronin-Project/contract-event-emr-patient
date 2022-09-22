@@ -1,0 +1,435 @@
+{
+  "$id": "https://github.com/projectronin/contract-event-emr-patient/v1/emr-patient-v1.schema.json",
+  "title": "EMR Patient V1",
+  "description": "A patient resource from the EMR",
+  "type": "object",
+  "properties": {
+    "create" : {
+      "$ref": "#/$defs/patient",
+      "description": "This represents an event when a new Patient is created"
+    },
+    "update": {
+      "$ref": "#/$defs/patient",
+      "description": "This represents an event when a new Patient is created"
+    },
+    "delete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "deletedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["id", "tenantId", "deletedAt"]
+    }
+  },
+  "$defs":  {
+    "coding": {
+      "type": "object",
+      "description": "This defines the required attributed for a FHIR code",
+      "properties": {
+        "system": {
+          "description": "The coding system that defines what the code represents",
+          "type": "string"
+        },
+        "code": {
+          "description": "The specific code determined by the system that specifies the value.",
+          "type": "string"
+        },
+        "display": {
+          "description": "The human readable value for the code",
+          "type": "string"
+        },
+        "version": {
+          "description": "The specific version of the system where the code is defined",
+          "type": "string"
+        }
+      },
+      "required": ["system", "code", "display"]
+    },
+    "codeableConcept": {
+      "type": "object",
+      "properties": {
+        "coding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coding"
+          },
+          "minItems": 1
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "roninCodeableConcept": {
+      "type":"object",
+      "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to repsent in an EMR context.",
+      "properties": {
+        "emrText": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "coding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coding"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["emrText", "url", "coding"]
+    },
+    "roninValueCode": {
+      "type": "object",
+      "properties": {
+        "emrText": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "valueCode": {
+          "type": "string"
+        }
+      }
+    },
+    "datePeriod": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": ["start", "end"]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string"
+        },
+        "line": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "city": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/$defs/datePeriod"
+        }
+      }
+    },
+    "contactPoint": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "use": {
+          "type": "string"
+        }
+      },
+      "required": ["value"]
+    },
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/codeableConcept"
+        },
+        "system": {
+          "type": "string",
+          "format": "uri"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "attachment": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hash": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "creation": {
+          "type": "string"
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "width": {
+          "type": "integer"
+        }
+      }
+    },
+    "resourceReference": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "id"]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/humanName"
+        },
+        "telecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contactPoint"
+          }
+        },
+        "address": {
+          "$ref": "#/$defs/address"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "organization": {
+          "$ref": "#/$defs/resourceReference"
+        },
+        "period": {
+          "$ref": "#/$defs/datePeriod"
+        }
+      }
+    },
+    "humanName": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "given": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefix": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suffix": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "period": {
+          "$ref": "#/$defs/datePeriod"
+        }
+      },
+      "required": ["family", "given"]
+    },
+    "patient": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "mrn": {
+          "type": "string"
+        },
+        "resourceVersion": {
+          "type": "string"
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "race": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "ethnicity": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "birthSex": {
+          "$ref": "#/$defs/roninValueCode"
+        },
+        "genderIdentity": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "religion": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/humanName"
+          }
+        },
+        "telecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contactPoint"
+          }
+        },
+        "roninTelecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contactPoint"
+          }
+        },
+        "gender": {
+          "type": "string"
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "deceased": {
+          "type": "object",
+          "properties": {
+            "isDeceased": {
+              "type": "boolean",
+              "description": "Where the patient is deceased"
+            },
+            "deceasedDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "If the patient is deceased this is the time of death"
+            }
+          },
+          "required": ["isDeceased"]
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/address"
+          }
+        },
+        "maritalStatus": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "multipleBirth": {
+          "type": "object",
+          "properties": {
+            "isMultipleBirth": {
+              "type": "boolean"
+            },
+            "birthOrder": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": ["isMultipleBirth"]
+        },
+        "photo": {
+          "$ref": "#/$defs/attachment"
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contact"
+          }
+        },
+        "communication": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "type": "string"
+              },
+              "preferred": {
+                "type": "boolean"
+              }
+            },
+            "required": ["language"]
+          }
+        },
+        "generalPractitioner": {
+          "$ref": "#/$defs/resourceReference"
+        },
+        "managingOrganization": {
+          "$ref": "#/$defs/resourceReference"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "other": {
+              "$ref": "#/$defs/resourceReference"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": ["id", "tenantId", "mrn", "birthDate", "gender", "name"]
+    }
+  }
+}
