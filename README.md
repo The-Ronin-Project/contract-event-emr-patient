@@ -1,7 +1,7 @@
 # EMR Patient
 
 # Scope
-This represents a Patient as consumed from the EMR. This is the event structure derived from the Common Ronin Data Model RoninPatient FHIR respource. This is defined [here](https://supreme-garbanzo-99254d0f.pages.github.io/ig/Ronin-Implementation-Guide-Home-List-Profiles-Ronin-Patient.html)
+This represents a Patient as consumed from the EMR. This is the event structure derived from the Common Ronin Data Model RoninPatient FHIR resource. This is defined [here](https://supreme-garbanzo-99254d0f.pages.github.io/ig/Ronin-Implementation-Guide-Home-List-Profiles-Ronin-Patient.html)
 
 # Usage
 This contains a simple `Makefile` for automating validation and document generation.  
