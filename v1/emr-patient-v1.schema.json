@@ -493,6 +493,14 @@
               "type": "string"
             }
           }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "udpatedAt": {
+          "type": "string",
+          "format": "date-time"
         }
       },
       "required": ["id", "tenantId", "mrn", "resourceVersion", "birthDate", "gender", "name"]
