@@ -111,28 +111,20 @@
         "given": [ "Throatwobbler"]
       }
     ],
-    "roninTelecom": [
-      {
-        "system": "phone",
-        "value": "206-555-1123",
-        "use": "home"
-      },
-      {
-        "system": "phone",
-        "value": "614-555-0623",
-        "use": "mobile"
-      }
-    ],
     "telecom": [
       {
-        "system": "phone",
+        "system": "telephone",
+        "roninSystem": "phone",
         "value": "206-555-1123",
-        "use": "home"
+        "use": "home phone",
+        "roninUse": "home"
       },
       {
-        "system": "phone",
+        "system": "telephone",
+        "roninSystem": "phone",
         "value": "614-555-0623",
-        "use": "mobile"
+        "use": "mobile phone",
+        "roninUse": "mobile"
       }
     ], 
     "maritalStatus": {
@@ -175,13 +167,54 @@
     "multipleBirth": {
       "isMultipleBirth": false
     },
-    "photo": {
-      "url": "https://getyarn.io/yarn-clip/b4796146-3c76-4a52-bd7d-fbf297a1efad/gif"
-    }, 
+    "photo": [
+      {
+        "url": "https://getyarn.io/yarn-clip/b4796146-3c76-4a52-bd7d-fbf297a1efad/gif"
+      }
+    ],
     "communication": [
       {
         "language": "en-US",
         "preferred": true
+      }
+    ],
+    "contact": [
+      {
+        "relationship": [
+          {
+            "emrText": "Employer",
+            "coding": [
+              {
+                "code": "E",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                "display": "Employer"
+              }
+            ]
+          }
+        ],
+        "name":  {
+          "family": "Yacht",
+          "given": ["Sheila"],
+          "prefix": ["Dr"],
+          "suffix": ["MD"]
+        },
+        "telecom": [
+          {
+            "system": "telephone",
+            "value": "206-555-1123",
+            "use": "home phone"
+          }
+        ],
+        "address": {
+          "line": [
+            "1415 16th St SW"
+          ],
+          "city": "Springfield",
+          "postalCode": "45501",
+          "state": "OH",
+          "country": "US"
+        },
+        "gender": "female"
       }
     ],
     "generalPractitioner": {

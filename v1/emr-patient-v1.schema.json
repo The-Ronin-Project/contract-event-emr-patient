@@ -87,7 +87,7 @@
           "minItems": 1
         }
       },
-      "required": ["emrText", "url", "coding"]
+      "required": ["emrText", "coding"]
     },
     "roninValueCode": {
       "type": "object",
@@ -148,13 +148,42 @@
       "type": "object",
       "properties": {
         "system": {
-          "type": "string"
+          "type": "string",
+          "description": "The original system defined by the EMR"
         },
         "value": {
-          "type": "string"
+          "type": "string",
+          "description": "The actual phone number or email address"
         },
         "use": {
-          "type": "string"
+          "type": "string",
+          "description": "The original use definition in the EMR"
+        }
+      },
+      "required": ["value"]
+    },
+    "roninContactPoint": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "type": "string",
+          "description": "The original system defined by the EMR"
+        },
+        "roninSystem": {
+          "type": "string",
+          "description": "Ronin's normalized system"
+        },
+        "value": {
+          "type": "string",
+          "description": "The actual phone number or email address"
+        },
+        "use": {
+          "type": "string",
+          "description": "The original use definition in the EMR"
+        },
+        "roninUse": {
+          "type": "string",
+          "description": "Ronin's normalized system"
         }
       },
       "required": ["value"]
@@ -220,13 +249,21 @@
         },
         "id": {
           "type": "string"
+        },
+        "display": {
+          "type": "string"
         }
-      },
-      "required": ["type", "id"]
+      }
     },
     "contact": {
       "type": "object",
       "properties": {
+        "relationship": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/roninCodeableConcept"
+          }
+        },
         "name": {
           "$ref": "#/$defs/humanName"
         },
@@ -254,34 +291,41 @@
       "type": "object",
       "properties": {
         "use": {
-          "type": "string"
+          "type": "string",
+          "description": "The purpose of the name"
         },
         "text": {
-          "type": "string"
+          "type": "string",
+          "description": "Representation of the full name"
         },
         "family": {
-          "type": "string"
+          "type": "string",
+          "description": "Family name or Surname"
         },
         "given": {
           "type": "array",
+          "description": "Given names: first, middle",
           "items": {
             "type": "string"
           }
         },
         "prefix": {
           "type": "array",
+          "description": "Name parts before the name",
           "items": {
             "type": "string"
           }
         },
         "suffix": {
           "type": "array",
+          "description": "Name parts after the name",
           "items": {
             "type": "string"
           }
         },
         "period": {
-          "$ref": "#/$defs/datePeriod"
+          "$ref": "#/$defs/datePeriod",
+          "description": "Time period when the name was in use"
         }
       },
       "required": ["family", "given"]
@@ -290,72 +334,81 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "description": "Ronnin Common ID for the Patient"
         },
         "tenantId": {
-          "type": "string"
+          "type": "string",
+          "description": "Ronin tenant/organization the Patient is associated with"
         },
         "mrn": {
-          "type": "string"
+          "type": "string",
+          "description": "EMR identifier for the Patient"
         },
         "resourceVersion": {
-          "type": "string"
+          "type": "string",
+          "description": "An increasing version value"
         },
         "identifiers": {
           "type": "array",
+          "description": "Miscelaneous identifiers in the EMR",
           "items": {
             "$ref": "#/$defs/identifier"
           }
         },
         "race": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/roninCodeableConcept",
+          "description": "US Core race classification"
         },
         "ethnicity": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/roninCodeableConcept",
+          "description": "US Core ethnicity classification"
         },
         "birthSex": {
-          "$ref": "#/$defs/roninValueCode"
+          "$ref": "#/$defs/roninValueCode",
+          "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/roninCodeableConcept",
+          "description": "Patient's identified gender"
         },
         "religion": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/roninCodeableConcept",
+          "description": "Patient's professed religion"
         },
         "active": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether the Patient's record is in active use"
         },
         "name": {
           "type": "array",
+          "description": "Patitent's name",
           "items": {
             "$ref": "#/$defs/humanName"
           }
         },
         "telecom": {
           "type": "array",
+          "description": "Patient's contact details",
           "items": {
-            "$ref": "#/$defs/contactPoint"
-          }
-        },
-        "roninTelecom": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/contactPoint"
+            "$ref": "#/$defs/roninContactPoint"
           }
         },
         "gender": {
-          "type": "string"
+          "type": "string",
+          "description": "Patient's Administrative Gender"
         },
         "birthDate": {
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "description": "Patient's birthdate"
         },
         "deceased": {
           "type": "object",
           "properties": {
             "isDeceased": {
               "type": "boolean",
-              "description": "Where the patient is deceased"
+              "description": "Whether the Patient is deceased"
             },
             "deceasedDateTime": {
               "type": "string",
@@ -367,37 +420,47 @@
         },
         "address": {
           "type": "array",
+          "description": "Patient's home address",
           "items": {
             "$ref": "#/$defs/address"
           }
         },
         "maritalStatus": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/roninCodeableConcept",
+          "description": "Patient's marital status"
         },
         "multipleBirth": {
           "type": "object",
           "properties": {
             "isMultipleBirth": {
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Whether the Patient was part of a multiple birth"
             },
             "birthOrder": {
               "type": "integer",
-              "minimum": 1
+              "minimum": 1,
+              "description": "The order in which they were born"
             }
           },
           "required": ["isMultipleBirth"]
         },
         "photo": {
-          "$ref": "#/$defs/attachment"
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/attachment",
+            "description": "Photo of the Patient"
+          }
         },
         "contact": {
           "type": "array",
+          "description": "Point of Contact for the Patient",
           "items": {
             "$ref": "#/$defs/contact"
           }
         },
         "communication": {
           "type": "array",
+          "description": "Languages that may be sued to communicate with the Patient",
           "items": {
             "type": "object",
             "properties": {
@@ -412,13 +475,16 @@
           }
         },
         "generalPractitioner": {
-          "$ref": "#/$defs/resourceReference"
+          "$ref": "#/$defs/resourceReference",
+          "description": "Patient's nominated primary care Practitioner"
         },
         "managingOrganization": {
-          "$ref": "#/$defs/resourceReference"
+          "$ref": "#/$defs/resourceReference",
+          "description": "Organization that is the custodian of the Patient's record"
         },
         "link": {
           "type": "object",
+          "description": "Link to another patient record that refers to this Patient",
           "properties": {
             "other": {
               "$ref": "#/$defs/resourceReference"
@@ -429,7 +495,7 @@
           }
         }
       },
-      "required": ["id", "tenantId", "mrn", "birthDate", "gender", "name"]
+      "required": ["id", "tenantId", "mrn", "resourceVersion", "birthDate", "gender", "name"]
     }
   }
 }
