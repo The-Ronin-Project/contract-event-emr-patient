@@ -503,7 +503,17 @@
           "format": "date-time"
         }
       },
-      "required": ["id", "tenantId", "mrn", "resourceVersion", "birthDate", "gender", "name"]
+      "required": [
+        "id", 
+        "tenantId", 
+        "mrn", 
+        "resourceVersion", 
+        "birthDate", 
+        "gender", 
+        "name", 
+        "createdAt", 
+        "updatedAt"
+      ]
     }
   }
 }
