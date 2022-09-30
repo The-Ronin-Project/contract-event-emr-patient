@@ -133,6 +133,12 @@
         "city": {
           "type": "string"
         },
+        "district": {
+          "type": "string"
+        },
+        "state": {
+          "type":"string"
+        },
         "postalCode": {
           "type": "string"
         },
@@ -460,12 +466,12 @@
         },
         "communication": {
           "type": "array",
-          "description": "Languages that may be sued to communicate with the Patient",
+          "description": "Languages that may be used to communicate with the Patient",
           "items": {
             "type": "object",
             "properties": {
               "language": {
-                "type": "string"
+                "$ref": "#/$defs/roninCodeableConcept"
               },
               "preferred": {
                 "type": "boolean"

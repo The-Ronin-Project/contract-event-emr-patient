@@ -146,6 +146,7 @@
           "Apt 17"
         ],
         "city": "Springfield",
+        "district": "Lane County",
         "state": "OR",
         "postalCode": "97403",
         "country": "US",
@@ -159,6 +160,7 @@
           "1415 16th St SW"
         ],
         "city": "Springfield",
+        "district": "Clark County",
         "postalCode": "45501",
         "state": "OH",
         "country": "US"
@@ -174,8 +176,30 @@
     ],
     "communication": [
       {
-        "language": "en-US",
+        "language": {
+          "emrText": "English",
+          "coding": [
+            {
+              "system": "urn:ietf:bcp:47",
+              "code": "en",
+              "display": "English"
+            }
+          ]
+        },
         "preferred": true
+      },
+      {
+        "language": {
+          "emrText": "Spanish",
+          "coding": [
+            {
+              "system": "urn:ietf:bcp:47",
+              "code": "sp",
+              "display": "Spanish"
+            }
+          ]
+        },
+        "preferred": false
       }
     ],
     "contact": [
