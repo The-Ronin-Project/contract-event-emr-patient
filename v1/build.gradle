@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'jsonschema2pojo'
+
+repositories {
+  mavenCentral()
+}
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath 'org.jsonschema2pojo:jsonschema2pojo-gradle-plugin:1.1.2'
+  }
+}
+
+dependencies {
+  implementation 'jakarta.validation:jakarta.validation-api:3.0.0'
+  implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.4'
+}
+
+jsonSchema2Pojo {
+  source = files("emr-patient-v1.schema.json")
+  targetDirectory = file("${project.buildDir}/generated-sources/js2p")
+  targetPackage = 'com.projectronin.events.patient.v1'
+
+  includeJsr303Annotations = true
+  useJakartaValidation = true
+  useOptionalForGetters = true
+
+  targetVersion = "17"
+}
