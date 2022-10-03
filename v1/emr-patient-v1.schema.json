@@ -343,6 +343,10 @@
           "type": "string",
           "description": "Ronnin Common ID for the Patient"
         },
+        "fhirId": {
+          "type": "string",
+          "description": "The Patient's FHIR ID"
+        },
         "tenantId": {
           "type": "string",
           "description": "Ronin tenant/organization the Patient is associated with"
@@ -510,7 +514,8 @@
         }
       },
       "required": [
-        "id", 
+        "id",
+        "fhirId",
         "tenantId", 
         "mrn", 
         "resourceVersion", 
