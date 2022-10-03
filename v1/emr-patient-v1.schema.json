@@ -392,7 +392,7 @@
         },
         "name": {
           "type": "array",
-          "description": "Patitent's name",
+          "description": "Patient's name",
           "items": {
             "$ref": "#/$defs/humanName"
           }
@@ -423,7 +423,7 @@
             "deceasedDateTime": {
               "type": "string",
               "format": "date-time",
-              "description": "If the patient is deceased this is the time of death"
+              "description": "If the Patient is deceased this is the time of death"
             }
           },
           "required": ["isDeceased"]
