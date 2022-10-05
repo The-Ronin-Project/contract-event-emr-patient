@@ -250,11 +250,31 @@
     "resourceReference": {
       "type": "object",
       "properties": {
-        "type": {
-          "type": "string"
+        "resource": {
+          "type": "object",
+          "description": "When this exists, it represents a reference to an actual resource. This is derived from the data specified in `reference`.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "This is the ronin resource type"
+            },
+            "id": {
+              "type": "string",
+              "description": "This is the ronin ID for the resource"
+            }
+          }
         },
-        "id": {
-          "type": "string"
+        "type": {
+          "type": "string",
+          "description": "The FHIR type attribute of the resource"
+        },
+        "reference": {
+          "type": "string",
+          "format": "uri-template",
+          "description": "This should refer to a `resource.type/resource.id` but could refer to an external resource"
+        },
+        "identifier": {
+          "$ref": "#/$defs/identifier"
         },
         "display": {
           "type": "string"
