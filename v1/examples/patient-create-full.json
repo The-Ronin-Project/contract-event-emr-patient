@@ -239,7 +239,10 @@
           "state": "OH",
           "country": "US"
         },
-        "gender": "female"
+        "gender": "female",
+        "organization": {
+          "display": "Yacht Boat Rentals"
+        }
       }
     ],
     "generalPractitioner": {
@@ -256,7 +259,7 @@
         "id": "h387afy7-D3D40-4B5D-BB8C-7779C4BFB5A0"
       }
     },
-    "createdAt": "2022-09-29T16:18:55",
-    "updatedAt": "2022-09-29T16:18:55"
+    "createdAt": "2022-09-29T16:18:55Z",
+    "updatedAt": "2022-09-29T16:18:55Z"
   }
 }
