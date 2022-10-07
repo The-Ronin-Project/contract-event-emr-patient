@@ -50,8 +50,7 @@
           "description": "The specific version of the system where the code is defined",
           "type": "string"
         }
-      },
-      "required": ["code"]
+      }
     },
     "codeableConcept": {
       "type":"object",
