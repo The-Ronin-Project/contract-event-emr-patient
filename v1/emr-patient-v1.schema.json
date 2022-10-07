@@ -356,6 +356,18 @@
       },
       "required": ["family", "given"]
     },
+    "communication": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "$ref": "#/$defs/roninCodeableConcept"
+        },
+        "preferred": {
+          "type": "boolean"
+        }
+      },
+      "required": ["language"]
+    },
     "patient": {
       "type": "object",
       "properties": {
@@ -492,16 +504,7 @@
           "type": "array",
           "description": "Languages that may be used to communicate with the Patient",
           "items": {
-            "type": "object",
-            "properties": {
-              "language": {
-                "$ref": "#/$defs/roninCodeableConcept"
-              },
-              "preferred": {
-                "type": "boolean"
-              }
-            },
-            "required": ["language"]
+            "$ref": "#/$defs/communication"
           }
         },
         "generalPractitioner": {
