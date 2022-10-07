@@ -51,24 +51,9 @@
           "type": "string"
         }
       },
-      "required": ["system", "code", "display"]
+      "required": ["code"]
     },
     "codeableConcept": {
-      "type": "object",
-      "properties": {
-        "coding": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/coding"
-          },
-          "minItems": 1
-        },
-        "text": {
-          "type": "string"
-        }
-      }
-    },
-    "roninCodeableConcept": {
       "type":"object",
       "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to repsent in an EMR context.",
       "properties": {
@@ -86,8 +71,7 @@
           },
           "minItems": 1
         }
-      },
-      "required": ["emrText", "coding"]
+      }
     },
     "roninValueCode": {
       "type": "object",
@@ -287,7 +271,7 @@
         "relationship": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/roninCodeableConcept"
+            "$ref": "#/$defs/codeableConcept"
           }
         },
         "name": {
@@ -360,7 +344,7 @@
       "type": "object",
       "properties": {
         "language": {
-          "$ref": "#/$defs/roninCodeableConcept"
+          "$ref": "#/$defs/codeableConcept"
         },
         "preferred": {
           "type": "boolean"
@@ -399,11 +383,11 @@
           }
         },
         "race": {
-          "$ref": "#/$defs/roninCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "US Core race classification"
         },
         "ethnicity": {
-          "$ref": "#/$defs/roninCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "US Core ethnicity classification"
         },
         "birthSex": {
@@ -411,11 +395,11 @@
           "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {
-          "$ref": "#/$defs/roninCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "Patient's identified gender"
         },
         "religion": {
-          "$ref": "#/$defs/roninCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "Patient's professed religion"
         },
         "active": {
@@ -468,7 +452,7 @@
           }
         },
         "maritalStatus": {
-          "$ref": "#/$defs/roninCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "Patient's marital status"
         },
         "multipleBirth": {
