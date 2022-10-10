@@ -87,16 +87,14 @@
         }
       }
     },
-    "datePeriod": {
+    "period": {
       "type": "object",
       "properties": {
         "start": {
-          "type": "string",
-          "format": "date"
+          "type": "string"
         },
         "end": {
-          "type": "string",
-          "format": "date"
+          "type": "string"
         }
       },
       "required": ["start", "end"]
@@ -129,7 +127,8 @@
           "type": "string"
         },
         "period": {
-          "$ref": "#/$defs/datePeriod"
+          "$ref": "#/$defs/period",
+          "description": "Dates when the address was in use. Expected to be a date or a parital date"
         }
       }
     },
@@ -292,7 +291,8 @@
           "$ref": "#/$defs/resourceReference"
         },
         "period": {
-          "$ref": "#/$defs/datePeriod"
+          "$ref": "#/$defs/period",
+          "description": "Dates when the contact was in use. Expected to be a date or a parital date"          
         }
       }
     },
@@ -333,8 +333,8 @@
           }
         },
         "period": {
-          "$ref": "#/$defs/datePeriod",
-          "description": "Time period when the name was in use"
+          "$ref": "#/$defs/period",
+          "description": "Time period when the name was in use. Expected to be a date or partial date"
         }
       },
       "required": ["family", "given"]
