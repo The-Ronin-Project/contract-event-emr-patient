@@ -54,7 +54,7 @@
     },
     "codeableConcept": {
       "type":"object",
-      "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to repsent in an EMR context.",
+      "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to represent in an EMR context.",
       "properties": {
         "emrText": {
           "type": "string"
@@ -96,8 +96,7 @@
         "end": {
           "type": "string"
         }
-      },
-      "required": ["start", "end"]
+      }
     },
     "address": {
       "type": "object",
@@ -128,7 +127,7 @@
         },
         "period": {
           "$ref": "#/$defs/period",
-          "description": "Dates when the address was in use. Expected to be a date or a parital date"
+          "description": "Dates when the address was in use. Expected to be a date or a partial date"
         }
       }
     },
@@ -345,7 +344,7 @@
         "language": {
           "$ref": "#/$defs/codeableConcept"
         },
-        "preferred": {
+        "isPreferred": {
           "type": "boolean"
         }
       },
@@ -376,7 +375,7 @@
         },
         "identifiers": {
           "type": "array",
-          "description": "Miscelaneous identifiers in the EMR",
+          "description": "Miscellaneous identifiers in the EMR. MRN, tenantId and fhirId in the FHIR representation are pulled up to core attributes and not listed here.",
           "items": {
             "$ref": "#/$defs/identifier"
           }
@@ -401,7 +400,7 @@
           "$ref": "#/$defs/codeableConcept",
           "description": "Patient's professed religion"
         },
-        "active": {
+        "isActive": {
           "type": "boolean",
           "description": "Whether the Patient's record is in active use"
         },
@@ -437,8 +436,7 @@
             },
             "deceasedDateTime": {
               "type": "string",
-              "format": "date-time",
-              "description": "If the Patient is deceased this is the time of death"
+              "description": "If the Patient is deceased this is the date/time of death."
             }
           },
           "required": ["isDeceased"]
@@ -514,7 +512,7 @@
           "type": "string",
           "format": "date-time"
         },
-        "udpatedAt": {
+        "updatedAt": {
           "type": "string",
           "format": "date-time"
         }

@@ -9,7 +9,7 @@
     "deceased": {
       "isDeceased": false
     },
-    "active": true,
+    "isActive": true,
     "gender": "male",
     "birthDate": "1942-02-01",
     "name": [

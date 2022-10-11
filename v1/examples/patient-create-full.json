@@ -89,7 +89,7 @@
       "isDeceased": true,
       "deceasedDateTime": "2022-09-01T09:14:27"
     },
-    "active": true,
+    "isActive": true,
     "gender": "male",
     "birthDate": "1941-01-08",
     "name": [
@@ -187,7 +187,7 @@
             }
           ]
         },
-        "preferred": true
+        "isPreferred": true
       },
       {
         "language": {
@@ -200,7 +200,7 @@
             }
           ]
         },
-        "preferred": false
+        "isPreferred": false
       }
     ],
     "contact": [
