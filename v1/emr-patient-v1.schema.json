@@ -104,6 +104,14 @@
         "use": {
           "type": "string"
         },
+        "type": {
+          "type": "string",
+          "description": "distinguishes between postal and residence or both"
+        },
+        "text": {
+          "type": "string",
+          "description": "display string of the address"
+        },
         "line": {
           "type": "array",
           "items": {
@@ -171,6 +179,15 @@
         "roninUse": {
           "type": "string",
           "description": "Ronin's normalized system"
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "The preferred order of use"
+        },
+        "period": {
+          "$ref": "#/$defs/period",
+          "description": "Time period when the contact was in use.."
         }
       },
       "required": ["value"]
