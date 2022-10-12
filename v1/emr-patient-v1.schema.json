@@ -187,7 +187,7 @@
         },
         "period": {
           "$ref": "#/$defs/period",
-          "description": "Time period when the contact was in use.."
+          "description": "Time period when the contact was in use."
         }
       },
       "required": ["value"]
