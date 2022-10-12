@@ -94,6 +94,7 @@
     "birthDate": "1941-01-08",
     "name": [
       {
+        "text": "Mr. Raymond L Yacht Esquire",
         "family": "Yacht",
         "given": [
           "Raymond",
@@ -108,6 +109,7 @@
         "use": "old"
       },
       {
+        "text": "Throatwobbler Mangrove",
         "family": "Mangrove",
         "given": [ "Throatwobbler"]
       }
@@ -118,14 +120,16 @@
         "roninSystem": "phone",
         "value": "206-555-1123",
         "use": "home phone",
-        "roninUse": "home"
+        "roninUse": "home",
+        "rank": 2
       },
       {
         "system": "telephone",
         "roninSystem": "phone",
         "value": "614-555-0623",
         "use": "mobile phone",
-        "roninUse": "mobile"
+        "roninUse": "mobile",
+        "rank": 1
       }
     ], 
     "maritalStatus": {
@@ -141,6 +145,7 @@
     },
     "address": [
       {
+        "text": "123 Main St. Apt 17 Springfield, OR 97403",
         "use": "old",
         "line": [
           "123 Main St",
@@ -157,6 +162,7 @@
         }
       }, 
       {
+        "text": "1415 16th St SW Springfield, OH 45501",
         "line": [
           "1415 16th St SW"
         ],

@@ -153,6 +153,15 @@
         "use": {
           "type": "string",
           "description": "The original use definition in the EMR"
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "The preferred order of use"
+        },
+        "period": {
+          "$ref": "#/$defs/period",
+          "description": "Time period when the contact was in use."
         }
       },
       "required": ["value"]
