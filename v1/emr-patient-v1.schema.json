@@ -72,12 +72,9 @@
         }
       }
     },
-    "roninValueCode": {
+    "valueCode": {
       "type": "object",
       "properties": {
-        "emrText": {
-          "type": "string"
-        },
         "url": {
           "type": "string",
           "format": "uri"
@@ -85,7 +82,8 @@
         "valueCode": {
           "type": "string"
         }
-      }
+      },
+      "required": ["valueCode"]
     },
     "period": {
       "type": "object",
@@ -415,7 +413,7 @@
           "description": "US Core ethnicity classification"
         },
         "birthSex": {
-          "$ref": "#/$defs/roninValueCode",
+          "$ref": "#/$defs/valueCode",
           "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {

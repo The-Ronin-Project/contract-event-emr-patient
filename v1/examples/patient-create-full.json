@@ -59,7 +59,6 @@
       ]
     },
     "birthSex": {
-      "emrText" : "F",
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
       "valueCode": "F"
     },
