@@ -169,11 +169,11 @@
       "properties": {
         "system": {
           "type": "string",
-          "description": "The original system defined by the EMR"
+          "description": "Normalized system"
         },
-        "roninSystem": {
-          "type": "string",
-          "description": "Ronin's normalized system"
+        "originalSystem": {
+          "$ref": "#/$defs/coding",
+          "description": "Original system value from the EMR"
         },
         "value": {
           "type": "string",
@@ -181,11 +181,11 @@
         },
         "use": {
           "type": "string",
-          "description": "The original use definition in the EMR"
+          "description": "Normalized use"
         },
-        "roninUse": {
-          "type": "string",
-          "description": "Ronin's normalized system"
+        "originalUse": {
+          "$ref": "#/$defs/coding",
+          "description": "Original use value from the EMR"
         },
         "rank": {
           "type": "integer",

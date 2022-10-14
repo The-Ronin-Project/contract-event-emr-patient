@@ -115,19 +115,31 @@
     ],
     "telecom": [
       {
-        "system": "telephone",
-        "roninSystem": "phone",
+        "originalSystem": {
+          "code": "telephone",
+          "system": "????"
+        },
+        "system": "phone",
         "value": "206-555-1123",
-        "use": "home phone",
-        "roninUse": "home",
+        "originalUse": {
+          "code": "home phone",
+          "system": "????"
+        },
+        "use": "home",
         "rank": 2
       },
       {
-        "system": "telephone",
-        "roninSystem": "phone",
+        "originalSystem": {
+          "code": "telephone",
+          "system": "????"
+        },
+        "system": "phone",
         "value": "614-555-0623",
-        "use": "mobile phone",
-        "roninUse": "mobile",
+        "originalUse": {
+          "code": "mobile phone",
+          "system": "????"
+        },
+        "use": "mobile",
         "rank": 1
       }
     ], 
