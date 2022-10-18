@@ -1,0 +1,282 @@
+{
+  "create": {
+    "id": "h387afy7-B898-253F93F1F48C",
+    "fhirId": "B898-253F93F1F48C",
+    "tenantId": "h387afy7",
+    "mrn": "7889773419",
+    "resourceVersion": "2022090912432146",
+    "identifiers": [],
+    "race": {
+      "emrText": "Mixed",
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.238",
+        "code": "2016-3",
+        "display": "White"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.238",
+        "code": "1002-5",
+        "display": "American Indian or Alaska Native"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.238",
+        "code": "2028-9",
+        "display": "Asian"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.238",
+        "code": "1586-7",
+        "display": "Shoshone"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.238",
+        "code": "2036-2",
+        "display": "Filipino"
+      }
+    ]
+  },
+  "ethnicity": {
+      "emrText": "Hispanic or Latino",
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "coding": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2135-2",
+          "display": "Hispanic or Latino"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2184-0",
+          "display": "Dominican"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2148-5",
+          "display": "Mexican"
+        }
+      ]
+    },
+    "birthSex": {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode": "F"
+    },
+    "genderIdentity": {
+      "emrText": "asked but unknown",
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity",
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+          "code": "ASKU",
+          "display": "asked but unknown"
+        }
+      ]
+    },
+    "religion": {
+      "emrText": "Christian (non-Catholic, non-specific)",
+      "url": "http://hl7.org/fhir/StructureDefinition/patient-religion",
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+          "code": "1014",
+          "display": "Christian (non-Catholic, non-specific)"
+        }
+      ]
+    },
+    "deceased": {
+      "isDeceased": true,
+      "deceasedDateTime": "2022-09-01T09:14:27"
+    },
+    "isActive": true,
+    "gender": "male",
+    "birthDate": "1941-01-08",
+    "name": [
+      {
+        "text": "Mr. Raymond L Yacht Esquire",
+        "family": "Yacht",
+        "given": [
+          "Raymond",
+          "Luxury"
+        ],
+        "prefix": ["Mr"],
+        "suffix": ["Esquire"],
+        "period": {
+          "start": "1941-01-08",
+          "end": "2001-04-21"
+        },
+        "use": "old"
+      },
+      {
+        "text": "Throatwobbler Mangrove",
+        "family": "Mangrove",
+        "given": [ "Throatwobbler"]
+      }
+    ],
+    "telecom": [
+      {
+        "originalSystem": {
+          "code": "telephone",
+          "system": "????"
+        },
+        "system": "phone",
+        "value": "206-555-1123",
+        "originalUse": {
+          "code": "home phone",
+          "system": "????"
+        },
+        "use": "home",
+        "rank": 2
+      },
+      {
+        "originalSystem": {
+          "code": "telephone",
+          "system": "????"
+        },
+        "system": "phone",
+        "value": "614-555-0623",
+        "originalUse": {
+          "code": "mobile phone",
+          "system": "????"
+        },
+        "use": "mobile",
+        "rank": 1
+      }
+    ], 
+    "maritalStatus": {
+      "emrText": "Married",
+      "url": "http://hl7.org/fhir/ValueSet/marital-status",
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+          "code": "M",
+          "display": "Married"
+        }                
+      ]
+    },
+    "address": [
+      {
+        "text": "123 Main St. Apt 17 Springfield, OR 97403",
+        "use": "old",
+        "line": [
+          "123 Main St",
+          "Apt 17"
+        ],
+        "city": "Springfield",
+        "district": "Lane County",
+        "state": "OR",
+        "postalCode": "97403",
+        "country": "US",
+        "period": {
+          "start": "1998-07-25",
+          "end": "2015-06-21"
+        }
+      }, 
+      {
+        "text": "1415 16th St SW Springfield, OH 45501",
+        "line": [
+          "1415 16th St SW"
+        ],
+        "city": "Springfield",
+        "district": "Clark County",
+        "postalCode": "45501",
+        "state": "OH",
+        "country": "US"
+      }
+    ],
+    "multipleBirth": {
+      "isMultipleBirth": false
+    },
+    "photo": [
+      {
+        "url": "https://getyarn.io/yarn-clip/b4796146-3c76-4a52-bd7d-fbf297a1efad/gif"
+      }
+    ],
+    "communication": [
+      {
+        "language": {
+          "emrText": "English",
+          "coding": [
+            {
+              "system": "urn:ietf:bcp:47",
+              "code": "en",
+              "display": "English"
+            }
+          ]
+        },
+        "isPreferred": true
+      },
+      {
+        "language": {
+          "emrText": "Spanish",
+          "coding": [
+            {
+              "system": "urn:ietf:bcp:47",
+              "code": "sp",
+              "display": "Spanish"
+            }
+          ]
+        },
+        "isPreferred": false
+      }
+    ],
+    "contact": [
+      {
+        "relationship": [
+          {
+            "emrText": "Employer",
+            "coding": [
+              {
+                "code": "E",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                "display": "Employer"
+              }
+            ]
+          }
+        ],
+        "name":  {
+          "family": "Yacht",
+          "given": ["Sheila"],
+          "prefix": ["Dr"],
+          "suffix": ["MD"]
+        },
+        "telecom": [
+          {
+            "system": "telephone",
+            "value": "206-555-1123",
+            "use": "home phone"
+          }
+        ],
+        "address": {
+          "line": [
+            "1415 16th St SW"
+          ],
+          "city": "Springfield",
+          "postalCode": "45501",
+          "state": "OH",
+          "country": "US"
+        },
+        "gender": "female",
+        "organization": {
+          "display": "Yacht Boat Rentals"
+        }
+      }
+    ],
+    "generalPractitioner": {
+      "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
+      "resource": {
+        "type": "Practitioner",
+        "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+      }
+    }, 
+    "managingOrganization": {
+      "reference": "Organization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
+      "resource": {
+        "type": "Organization",
+        "id": "h387afy7-D3D40-4B5D-BB8C-7779C4BFB5A0"
+      }
+    },
+    "createdAt": "2022-09-29T16:18:55Z",
+    "updatedAt": "2022-09-29T16:18:55Z"
+  }
+}
