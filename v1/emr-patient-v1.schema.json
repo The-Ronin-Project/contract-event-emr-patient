@@ -512,8 +512,11 @@
           }
         },
         "generalPractitioner": {
-          "$ref": "#/$defs/resourceReference",
-          "description": "Patient's nominated primary care Practitioner"
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resourceReference",
+            "description": "Patient's nominated primary care Practitioner"
+          }
         },
         "managingOrganization": {
           "$ref": "#/$defs/resourceReference",
