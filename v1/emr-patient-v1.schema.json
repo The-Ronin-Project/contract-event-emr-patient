@@ -520,14 +520,17 @@
           "description": "Organization that is the custodian of the Patient's record"
         },
         "link": {
-          "type": "object",
-          "description": "Link to another patient record that refers to this Patient",
-          "properties": {
-            "other": {
-              "$ref": "#/$defs/resourceReference"
-            },
-            "type": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Link to another patient record that refers to this Patient",
+            "properties": {
+              "other": {
+                "$ref": "#/$defs/resourceReference"
+              },
+              "type": {
+                "type": "string"
+              }
             }
           }
         },
