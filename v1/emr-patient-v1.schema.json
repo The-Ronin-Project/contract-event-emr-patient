@@ -359,8 +359,7 @@
           "$ref": "#/$defs/period",
           "description": "Time period when the name was in use. Expected to be a date or partial date"
         }
-      },
-      "required": ["family", "given"]
+      }
     },
     "communication": {
       "type": "object",
