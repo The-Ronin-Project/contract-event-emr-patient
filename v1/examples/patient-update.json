@@ -56,13 +56,15 @@
     "multipleBirth": {
       "isMultipleBirth": false
     },
-    "generalPractitioner": {
-      "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
-      "resource": {
-        "type": "Practitioner",
-        "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+    "generalPractitioner": [
+      {
+        "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
+        "resource": {
+          "type": "Practitioner",
+          "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+        }
       }
-    }, 
+    ],  
     "managingOrganization": {
       "reference": "Organization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
       "resource": {
