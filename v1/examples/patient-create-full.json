@@ -7,37 +7,39 @@
     "resourceVersion": "2022090912432146",
     "identifiers": [],
     "race": {
-      "emrText": "Mixed",
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-      "coding": [
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2016-3",
-        "display": "White"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "1002-5",
-        "display": "American Indian or Alaska Native"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2028-9",
-        "display": "Asian"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "1586-7",
-        "display": "Shoshone"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2036-2",
-        "display": "Filipino"
-      }
-    ]
-  },
-  "ethnicity": {
+      "ombCategory": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2016-3",
+          "display": "White"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1002-5",
+          "display": "American Indian or Alaska Native"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2028-9",
+          "display": "Asian"
+        }
+      ],
+      "detailed": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1586-7",
+          "display": "Shoshone"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2036-2",
+          "display": "Filipino"
+        }
+      ],
+      "emrText": "Mixed"
+    },
+    "ethnicity": {
       "emrText": "Hispanic or Latino",
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
       "coding": [

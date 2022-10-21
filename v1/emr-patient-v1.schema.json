@@ -52,16 +52,32 @@
         }
       }
     },
+    "extensionCodeableConcept": {
+      "type": "object",
+      "description": "This is a CodeableConcept with a defined URL for the extension",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri-template"
+        },
+        "emrText": {
+          "type": "string"
+        },
+        "coding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coding"
+          }
+        }
+      },
+      "required": ["url"]
+    },
     "codeableConcept": {
       "type":"object",
       "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to represent in an EMR context.",
       "properties": {
         "emrText": {
           "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
         },
         "coding": {
           "type": "array",
@@ -404,11 +420,51 @@
           }
         },
         "race": {
-          "$ref": "#/$defs/codeableConcept",
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri-template"
+            },
+            "ombCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              },
+              "maxItems": 5
+            },
+            "detailed": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
+            },
+            "emrText": {
+              "type": "string"
+            }
+          },
           "description": "US Core race classification"
         },
         "ethnicity": {
-          "$ref": "#/$defs/codeableConcept",
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri-template"
+            },
+            "ombCategory": {
+              "$ref": "#/$defs/coding"
+            },
+            "detailed": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
+            },
+            "emrText": {
+              "type": "string"
+            }
+          },
           "description": "US Core ethnicity classification"
         },
         "birthSex": {
@@ -416,7 +472,7 @@
           "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {
-          "$ref": "#/$defs/codeableConcept",
+          "$ref": "#/$defs/extensionCodeableConcept",
           "description": "Patient's identified gender"
         },
         "religion": {
