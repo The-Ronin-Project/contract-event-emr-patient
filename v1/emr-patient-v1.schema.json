@@ -453,7 +453,10 @@
               "format": "uri-template"
             },
             "ombCategory": {
-              "$ref": "#/$defs/coding"
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
             },
             "detailed": {
               "type": "array",
