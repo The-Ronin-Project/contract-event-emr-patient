@@ -40,8 +40,38 @@
       "emrText": "Mixed"
     },
     "ethnicity": {
-      "emrText": "Hispanic or Latino",
       "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "ombCategory": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2016-3",
+          "display": "White"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1002-5",
+          "display": "American Indian or Alaska Native"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2028-9",
+          "display": "Asian"
+        }
+      ],
+      "detailed": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1586-7",
+          "display": "Shoshone"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2036-2",
+          "display": "Filipino"
+        }
+      ],
+      "emrText": "Hispanic or Latino",
+
       "coding": [
         {
           "system": "urn:oid:2.16.840.1.113883.6.238",
@@ -112,7 +142,8 @@
       {
         "text": "Throatwobbler Mangrove",
         "family": "Mangrove",
-        "given": [ "Throatwobbler"]
+        "given": [ "Throatwobbler"],
+        "use": "official"
       }
     ],
     "telecom": [
@@ -266,17 +297,17 @@
     ],
     "generalPractitioner": [
       {
-        "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
+        "reference": "RoninPractitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
         "resource": {
-          "type": "Practitioner",
+          "type": "RoninPractitioner",
           "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
         }
       }
     ], 
     "managingOrganization": {
-      "reference": "Organization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
+      "reference": "RoninOrganization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
       "resource": {
-        "type": "Organization",
+        "type": "RoninOrganization",
         "id": "h387afy7-D3D40-4B5D-BB8C-7779C4BFB5A0"
       }
     },
