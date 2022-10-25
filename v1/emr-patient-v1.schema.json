@@ -52,26 +52,6 @@
         }
       }
     },
-    "extensionCodeableConcept": {
-      "type": "object",
-      "description": "This is a CodeableConcept with a defined URL for the extension",
-      "properties": {
-        "url": {
-          "type": "string",
-          "format": "uri-template"
-        },
-        "emrText": {
-          "type": "string"
-        },
-        "coding": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/coding"
-          }
-        }
-      },
-      "required": ["url"]
-    },
     "codeableConcept": {
       "type":"object",
       "description": "This is a CodeableConcept with an extracted emrText attribute that dictates the correct value to represent in an EMR context.",
@@ -87,19 +67,6 @@
           "minItems": 1
         }
       }
-    },
-    "valueCode": {
-      "type": "object",
-      "properties": {
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "valueCode": {
-          "type": "string"
-        }
-      },
-      "required": ["valueCode"]
     },
     "period": {
       "type": "object",
@@ -422,10 +389,6 @@
         "race": {
           "type": "object",
           "properties": {
-            "url": {
-              "type": "string",
-              "format": "uri-template"
-            },
             "ombCategory": {
               "type": "array",
               "items": {
@@ -448,10 +411,6 @@
         "ethnicity": {
           "type": "object",
           "properties": {
-            "url": {
-              "type": "string",
-              "format": "uri-template"
-            },
             "ombCategory": {
               "type": "array",
               "items": {
@@ -471,11 +430,11 @@
           "description": "US Core ethnicity classification"
         },
         "birthSex": {
-          "$ref": "#/$defs/valueCode",
+          "type": "string",
           "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {
-          "$ref": "#/$defs/extensionCodeableConcept",
+          "$ref": "#/$defs/codeableConcept",
           "description": "Patient's identified gender"
         },
         "religion": {
