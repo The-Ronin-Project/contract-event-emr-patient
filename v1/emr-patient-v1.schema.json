@@ -59,10 +59,6 @@
         "emrText": {
           "type": "string"
         },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
         "coding": {
           "type": "array",
           "items": {
@@ -71,19 +67,6 @@
           "minItems": 1
         }
       }
-    },
-    "valueCode": {
-      "type": "object",
-      "properties": {
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "valueCode": {
-          "type": "string"
-        }
-      },
-      "required": ["valueCode"]
     },
     "period": {
       "type": "object",
@@ -404,15 +387,50 @@
           }
         },
         "race": {
-          "$ref": "#/$defs/codeableConcept",
+          "type": "object",
+          "properties": {
+            "ombCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              },
+              "maxItems": 5
+            },
+            "detailed": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
+            },
+            "emrText": {
+              "type": "string"
+            }
+          },
           "description": "US Core race classification"
         },
         "ethnicity": {
-          "$ref": "#/$defs/codeableConcept",
+          "type": "object",
+          "properties": {
+            "ombCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
+            },
+            "detailed": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coding"
+              }
+            },
+            "emrText": {
+              "type": "string"
+            }
+          },
           "description": "US Core ethnicity classification"
         },
         "birthSex": {
-          "$ref": "#/$defs/valueCode",
+          "type": "string",
           "description": "Patient's gender as assigned at birth"
         },
         "genderIdentity": {
@@ -512,22 +530,28 @@
           }
         },
         "generalPractitioner": {
-          "$ref": "#/$defs/resourceReference",
-          "description": "Patient's nominated primary care Practitioner"
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/resourceReference",
+            "description": "Patient's nominated primary care Practitioner"
+          }
         },
         "managingOrganization": {
           "$ref": "#/$defs/resourceReference",
           "description": "Organization that is the custodian of the Patient's record"
         },
         "link": {
-          "type": "object",
-          "description": "Link to another patient record that refers to this Patient",
-          "properties": {
-            "other": {
-              "$ref": "#/$defs/resourceReference"
-            },
-            "type": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Link to another patient record that refers to this Patient",
+            "properties": {
+              "other": {
+                "$ref": "#/$defs/resourceReference"
+              },
+              "type": {
+                "type": "string"
+              }
             }
           }
         },

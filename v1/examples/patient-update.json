@@ -15,7 +15,8 @@
     "name": [
       {
         "family": "Phillips-Bong",
-        "given": [ "Kevin"]
+        "given": [ "Kevin"],
+        "use": "official"
       }
     ],
     "roninTelecom": [
@@ -56,17 +57,19 @@
     "multipleBirth": {
       "isMultipleBirth": false
     },
-    "generalPractitioner": {
-      "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
-      "resource": {
-        "type": "Practitioner",
-        "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+    "generalPractitioner": [
+      {
+        "reference": "RoninPractitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
+        "resource": {
+          "type": "RoninPractitioner",
+          "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+        }
       }
-    }, 
+    ],  
     "managingOrganization": {
-      "reference": "Organization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
+      "reference": "RoninOrganization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
       "resource": {
-        "type": "Organization",
+        "type": "RoninOrganization",
         "id": "h387afy7-D3D40-4B5D-BB8C-7779C4BFB5A0"
       }
     },

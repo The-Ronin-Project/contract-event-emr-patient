@@ -7,64 +7,72 @@
     "resourceVersion": "2022090912432146",
     "identifiers": [],
     "race": {
-      "emrText": "Mixed",
-      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-      "coding": [
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2016-3",
-        "display": "White"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "1002-5",
-        "display": "American Indian or Alaska Native"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2028-9",
-        "display": "Asian"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "1586-7",
-        "display": "Shoshone"
-      },
-      {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2036-2",
-        "display": "Filipino"
-      }
-    ]
-  },
-  "ethnicity": {
-      "emrText": "Hispanic or Latino",
-      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
-      "coding": [
+      "ombCategory": [
         {
           "system": "urn:oid:2.16.840.1.113883.6.238",
-          "code": "2135-2",
-          "display": "Hispanic or Latino"
+          "code": "2016-3",
+          "display": "White"
         },
         {
           "system": "urn:oid:2.16.840.1.113883.6.238",
-          "code": "2184-0",
-          "display": "Dominican"
+          "code": "1002-5",
+          "display": "American Indian or Alaska Native"
         },
         {
           "system": "urn:oid:2.16.840.1.113883.6.238",
-          "code": "2148-5",
-          "display": "Mexican"
+          "code": "2028-9",
+          "display": "Asian"
         }
-      ]
+      ],
+      "detailed": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1586-7",
+          "display": "Shoshone"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2036-2",
+          "display": "Filipino"
+        }
+      ],
+      "emrText": "Mixed"
     },
-    "birthSex": {
-      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-      "valueCode": "F"
+    "ethnicity": {
+      "ombCategory": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2016-3",
+          "display": "White"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1002-5",
+          "display": "American Indian or Alaska Native"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2028-9",
+          "display": "Asian"
+        }
+      ],
+      "detailed": [
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "1586-7",
+          "display": "Shoshone"
+        },
+        {
+          "system": "urn:oid:2.16.840.1.113883.6.238",
+          "code": "2036-2",
+          "display": "Filipino"
+        }
+      ],
+      "emrText": "Hispanic or Latino"
     },
+    "birthSex": "F",
     "genderIdentity": {
       "emrText": "asked but unknown",
-      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity",
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
@@ -75,7 +83,6 @@
     },
     "religion": {
       "emrText": "Christian (non-Catholic, non-specific)",
-      "url": "http://hl7.org/fhir/StructureDefinition/patient-religion",
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
@@ -110,7 +117,8 @@
       {
         "text": "Throatwobbler Mangrove",
         "family": "Mangrove",
-        "given": [ "Throatwobbler"]
+        "given": [ "Throatwobbler"],
+        "use": "official"
       }
     ],
     "telecom": [
@@ -262,17 +270,19 @@
         }
       }
     ],
-    "generalPractitioner": {
-      "reference": "Practitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
-      "resource": {
-        "type": "Practitioner",
-        "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+    "generalPractitioner": [
+      {
+        "reference": "RoninPractitioner/h387afy7-D7C8-4B2C-AF9B-738F10807850",
+        "resource": {
+          "type": "RoninPractitioner",
+          "id": "h387afy7-D7C8-4B2C-AF9B-738F10807850"
+        }
       }
-    }, 
+    ], 
     "managingOrganization": {
-      "reference": "Organization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
+      "reference": "RoninOrganization/h387afy7-3D40-4B5D-BB8C-7779C4BFB5A0",
       "resource": {
-        "type": "Organization",
+        "type": "RoninOrganization",
         "id": "h387afy7-D3D40-4B5D-BB8C-7779C4BFB5A0"
       }
     },
