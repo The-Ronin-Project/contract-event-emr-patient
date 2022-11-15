@@ -441,7 +441,7 @@
           "$ref": "#/$defs/codeableConcept",
           "description": "Patient's professed religion"
         },
-        "isActive": {
+        "active": {
           "type": "boolean",
           "description": "Whether the Patient's record is in active use"
         },
